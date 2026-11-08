@@ -48,3 +48,16 @@ footer {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
