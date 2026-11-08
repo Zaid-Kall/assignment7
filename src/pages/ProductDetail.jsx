@@ -1,10 +1,12 @@
 import { Link, useNavigate, useParams } from "react-router";
 import { fetchProduct } from "../api/productsApi";
 import { useFetch } from "../hooks/useFetch";
+import { useCartStore } from "../store/cartStore";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const addItem = useCartStore((state) => state.addItem);
   const { loading, error, data: product } = useFetch(
     (signal) => fetchProduct(id, signal),
     [id]
@@ -33,6 +35,7 @@ export default function ProductDetail() {
           <p>{product.description}</p>
           <p>Price: ${product.price}</p>
           <p>Category: {product.category}</p>
+          <button onClick={() => addItem(product)}>Add to cart</button>
         </div>
       )}
 
