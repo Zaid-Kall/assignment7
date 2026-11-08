@@ -42,3 +42,9 @@ footer {
   padding: 1rem;
   border-radius: 8px;
 }
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
